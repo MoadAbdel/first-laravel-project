@@ -5,16 +5,12 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <header>
-        <h1>Mon site Laravel</h1>
-    </header>
+    @include('partials.header')
 
     <main>
         @yield('content')
     </main>
 
-    <footer>
-        <p>© 2025 - Tous droits réservés</p>
-    </footer>
+    @include('partials.footer')
 </body>
 </html>
