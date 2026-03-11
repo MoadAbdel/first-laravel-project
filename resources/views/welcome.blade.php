@@ -9,10 +9,12 @@
         @if ($loop->last)
             @break
         @endif
-        <x-article
-            :title="$article['title']"
-            :description="$article['description']"
-        />
+        <a href="{{ route('articles.details', ['id' => $article->id]) }}">
+            <x-article
+                :title="$article->title"
+                :description="$article->description"
+            />
+        </a>
     @empty
         <p>Aucun article disponible.</p>
     @endforelse
