@@ -6,11 +6,11 @@ use App\Http\Controllers\ArticleController;
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
 
-Route::prefix('articles')->name('article.')->group(function () {
-    Route::get('/creer', [ArticleController::class, 'createMany'])->name('create');
-    Route::get('/modifier/{id}', [ArticleController::class, 'updateOne'])->name('update');
-    Route::get('/supprimer/{id}', [ArticleController::class, 'deleteOne'])->name('delete');
-    Route::get('/{id}', [ArticleController::class, 'show'])->name('details');
+Route::prefix('articles')->group(function () {
+    Route::get('/creer', [ArticleController::class, 'create']);
+    Route::get('/modifier/{id}', [ArticleController::class, 'update']);
+    Route::get('/supprimer/{id}', [ArticleController::class, 'delete']);
+    Route::get('/{id}', [ArticleController::class, 'show'])->name('article.details');
 });
 
 Route::fallback(function () {

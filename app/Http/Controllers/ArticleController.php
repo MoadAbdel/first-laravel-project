@@ -26,14 +26,14 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function createMany()
+    public function create()
     {
         $this->seed();
 
         return 'Articles créés';
     }
 
-    public function updateOne(int $id)
+    public function update(int $id)
     {
         $article = Article::findOrFail($id);
 
@@ -44,7 +44,7 @@ class ArticleController extends Controller
         return 'Article mis à jour';
     }
 
-    public function deleteOne(int $id)
+    public function delete(int $id)
     {
         $article = Article::findOrFail($id);
         $article->delete();
